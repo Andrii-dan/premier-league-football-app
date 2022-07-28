@@ -1,0 +1,12 @@
+@import '../../scss/base'; 
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 1200px;
+	background: $secondary-bg-color;
+	border-radius: 3px;
+	padding: 15px;
+}

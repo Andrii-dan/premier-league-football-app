@@ -1,0 +1,33 @@
+//box shadow
+$base-box-shadow: 0px 0px 14px -2px #1d1d1d;
+
+//text color
+$text-color-white: #fff;
+$text-color-dark: #3d3d3d;
+
+//navigation border hover color
+$nav-hover-color: #8000a8;
+
+//background colors
+$primary-bg-color: #3f3f3f;
+$secondary-bg-color: #f9f9f9;
+
+//background linear-gradient for headers
+$header-bg-color: linear-gradient(
+	0deg,
+	rgba(151, 60, 255, 1) 100%,
+	rgba(172, 121, 222, 1) 0%
+);
+
+// buttons hover color
+$btn-color: #973cff;
+
+//border radius
+$border-radius: 3px;
+
+// the most commonly used flex styles as mixin
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

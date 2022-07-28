@@ -1,0 +1,35 @@
+@import '../../../scss/base';
+
+.nav-bar-section {
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: $text-color-white;
+	background: $header-bg-color;
+	padding: 20px;
+	position: relative;
+	margin: 0 auto;
+	max-width: 1680px;
+
+	.logo {
+		font-weight: bold;
+		color: $text-color-white;
+		display: flex;
+		align-items: center;
+		font-size: 24px;
+		cursor: pointer;
+	}
+
+	.fa-bars,
+	.fa-xmark {
+		display: none;
+		font-size: 32px;
+		cursor: pointer;
+		transition: 0.3s;
+
+		@include mobile {
+			display: block;
+		}
+	}
+}

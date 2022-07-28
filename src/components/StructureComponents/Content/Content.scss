@@ -1,0 +1,9 @@
+@import '../../../scss/base';
+
+.content__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background: $primary-bg-color;
+	min-height: calc(100vh - 120px);
+}

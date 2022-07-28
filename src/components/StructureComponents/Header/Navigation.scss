@@ -1,0 +1,28 @@
+@import '../../../scss/base';
+
+.navigation {
+	@include mobile {
+		display: none;
+	}
+
+	@include flex-center;
+	text-transform: uppercase;
+	color: $text-color-white;
+	font-size: 20px;
+
+	li {
+		padding-left: 30px;
+
+		&:first-child {
+			padding: 0;
+		}
+	}
+
+	span {
+		cursor: pointer;
+
+		&:hover {
+			border-bottom: 3px solid $nav-hover-color;
+		}
+	}
+}
