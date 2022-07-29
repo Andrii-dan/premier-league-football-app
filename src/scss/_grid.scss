@@ -16,6 +16,7 @@ $column-base-width: calc(100% / $columns);
 	margin: 0 auto;
 	padding: 0;
 	.row {
+		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		[class^='col-'] {

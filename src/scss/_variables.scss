@@ -25,6 +25,11 @@ $btn-color: #973cff;
 //border radius
 $border-radius: 3px;
 
+//border colors
+$light-border-color: #b9b9b9;
+$ucl-color: royalblue;
+$releg-color: tomato;
+
 // the most commonly used flex styles as mixin
 @mixin flex-center {
 	display: flex;

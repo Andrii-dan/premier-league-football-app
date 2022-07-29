@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { db } from '../../firebase-config';
-import { collection, getDocs } from 'firebase/firestore';
+import { motion } from 'framer-motion';
 import Loading from '../StructureComponents/Loading/Loading';
 import './ClubsStrap.scss';
 
-const ClubsStrap = () => {
-	const [clubsList, setClubsList] = useState([]);
-	const clubsCollectionRef = collection(db, 'clubs22_23');
+const ClubsStrap = ({ clubsList }) => {
+	const animateFrom = { opacity: 0, y: -40 };
+	const animateTo = { opacity: 1, y: 0 };
 	let navigate = useNavigate();
-
-	useEffect(() => {
-		// takes data from firebase with all clubs (objects) and its info like name, logo, games etc., and updates clubList state
-		const getData = async () => {
-			const data = await getDocs(clubsCollectionRef);
-			setClubsList(
-				data.docs.map((doc) => ({
-					...doc.data(),
-					id: doc.id,
-				}))
-			);
-		};
-
-		getData();
-	}, []);
 
 	return (
 		<div className='clubs__strap'>
@@ -33,14 +17,17 @@ const ClubsStrap = () => {
 			) : (
 				clubsList.map((el, index) => {
 					return (
-						<span
+						<motion.span
+							initial={animateFrom}
+							animate={animateTo}
+							transition={{ delay: index / 50 }}
 							key={index}
 							onClick={() => {
 								navigate(`/clubs/${el.id}`);
 							}}
 						>
 							<img className='club__logo' src={el.logo} alt={`${el.name}'s`} />
-						</span>
+						</motion.span>
 					);
 				})
 			)}
