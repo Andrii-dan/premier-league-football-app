@@ -1,12 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../components/StructureComponents/Loading/Loading';
-import { motion } from 'framer-motion';
 import './Standing.scss';
 
 const Standing = ({ clubsList }) => {
-	const animateFrom = { opacity: 0, y: -100 };
-	const animateTo = { opacity: 1, y: 0 };
 	let navigate = useNavigate();
 
 	return (
@@ -29,17 +26,14 @@ const Standing = ({ clubsList }) => {
 						<span className='club__goals-against'>GA</span>
 						<span className='club__goals-difference'>GD</span>
 						<span className='club__points'>Pts</span>
-						{/* <span className='club__form'>Form</span> */}
+						<span className='club__form'>Form</span>
 						{/* <span className='club__status'></span> */}
 					</li>
 					{clubsList
 						.sort((a, b) => a.position - b.position)
 						.map((el, index) => {
 							return (
-								<motion.li
-									initial={animateFrom}
-									animate={animateTo}
-									transition={{ delay: index / 50 }}
+								<li
 									key={index}
 									className={
 										index === 3
@@ -73,9 +67,28 @@ const Standing = ({ clubsList }) => {
 										{el.goals.for.total - el.goals.against.total}
 									</span>
 									<span className='club__points'>{el.points.total}</span>
-									{/* <span className='club__form'>{el.form}</span>
-							<span className='club__status'>{el.status}</span> */}
-								</motion.li>
+									<span className='club__form'>
+										{el.form.split('').map((chr, index) => (
+											<span
+												className='club__form-chr'
+												key={index}
+												style={
+													chr === 'W'
+														? { color: '#31c700' }
+														: chr === 'L'
+														? { color: '#e3174b' }
+														: null
+												}
+											>
+												{chr != '-' ? (
+													<i className='fa-solid fa-circle'></i>
+												) : (
+													chr
+												)}
+											</span>
+										))}
+									</span>
+								</li>
 							);
 						})}
 				</ul>
