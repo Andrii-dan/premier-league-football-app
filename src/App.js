@@ -9,7 +9,7 @@ import AdminPanel from './pages/Edit/AdminPanel';
 import Header from './components/StructureComponents/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import Content from './components/StructureComponents/Content/Content';
-import Standing from './pages/Standing/Standing';
+import StandingPage from './pages/Standing/StandingPage';
 import Footer from './components/StructureComponents/Footer/Footer';
 
 function App() {
@@ -38,10 +38,10 @@ function App() {
 			<Header />
 			<Content clubsList={clubsList}>
 				<Routes>
-					<Route path='/' element={<HomePage />} />
+					<Route path='/' element={<HomePage clubsList={clubsList} />} />
 					<Route
 						path='/standing'
-						element={<Standing clubsList={clubsList} />}
+						element={<StandingPage clubsList={clubsList} />}
 					/>
 					<Route path='/edit' element={<AdminPanel />} />
 					<Route path='/add-club' element={<AddClub />} />

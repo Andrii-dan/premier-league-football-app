@@ -3,10 +3,9 @@
 .loading-box {
 	@include flex-center;
 	min-height: 500px;
-	border-radius: $border-radius;
 }
 
-.standing {
+.standing__preview {
 	@include mobile {
 		padding: 0 8px;
 	}
@@ -43,73 +42,28 @@
 	.club__logo,
 	.club__name,
 	.club__games,
-	.club__wins,
-	.club__draws,
-	.club__loses,
-	.club__goals-for,
-	.club__goals-against,
 	.club__goals-difference,
-	.club__points,
-	.club__form,
-	.club__status {
+	.club__points {
 		display: inline-block;
 		text-align: center;
 	}
 
 	.club__name {
-		width: 40%;
+		width: 45%;
 		text-align: left;
-		@include mobile {
-			width: 45%;
-		}
-	}
-
-	.club__position,
-	.club__logo,
-	.club__games,
-	.club__wins,
-	.club__draws,
-	.club__loses,
-	.club__goals-for,
-	.club__goals-against,
-	.club__goals-difference,
-	.club__points {
-		width: 5%;
-	}
-
-	.club__position,
-	.club__games,
-	.club__points,
-	.club__goals-difference {
-		@include mobile {
-			width: 10%;
-		}
-	}
-
-	.club__form {
-		width: 10%;
-
-		&-chr {
-			color: $text-color-dark;
-		}
 	}
 
 	.club__logo {
-		@include mobile {
-			width: 15%;
-		}
+		width: 15%;
 	}
 
-	.club__wins,
-	.club__draws,
-	.club__loses,
-	.club__goals-for,
-	.club__goals-against,
-	.club__form {
-		@include mobile {
-			display: none;
-		}
+	.club__position,
+	.club__games,
+	.club__goals-difference,
+	.club__points {
+		width: 10%;
 	}
+
 	.ucl-zone {
 		border-bottom: 2px solid $ucl-color;
 	}
@@ -118,8 +72,28 @@
 		border-bottom: 2px solid $releg-color;
 	}
 
-	.fa-circle {
-		font-size: 9px;
-		padding: 0 2px;
+	&-buttons {
+		display: flex;
+		justify-content: space-between;
+		background: $secondary-bg-color;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+
+		button {
+			background: none;
+			color: $text-color-dark;
+			border: none;
+			margin: 10px;
+			cursor: pointer;
+			transition: 0.3s;
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			.fa-arrow-right,
+			.fa-arrow-left {
+				font-size: 11px;
+			}
+		}
 	}
 }
