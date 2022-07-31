@@ -19,8 +19,13 @@ const ClubsStrap = ({ clubsList }) => {
 					return (
 						<motion.span
 							initial={animateFrom}
-							animate={animateTo}
-							transition={{ delay: index / 50 }}
+							animate={{ ...animateTo, transition: { duration: index / 50 } }}
+							whileHover={{
+								scale: 1.4,
+								y: -6,
+								transition: { duration: 0 },
+							}}
+							whileTap={{ scale: 1 }}
 							key={index}
 							onClick={() => {
 								navigate(`/clubs/${el.id}`);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../components/StructureComponents/Loading/Loading';
 import './Standing.scss';
@@ -80,7 +80,7 @@ const Standing = ({ clubsList }) => {
 														: null
 												}
 											>
-												{chr != '-' ? (
+												{chr !== '-' ? (
 													<i className='fa-solid fa-circle'></i>
 												) : (
 													chr

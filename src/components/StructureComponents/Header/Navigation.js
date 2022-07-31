@@ -16,8 +16,12 @@ const Navigation = () => {
 					return (
 						<motion.li
 							initial={animateFrom}
-							animate={animateTo}
-							transition={{ delay: el.delay }}
+							animate={{ ...animateTo, transition: { duration: el.delay } }}
+							whileHover={{
+								y: -3,
+								transition: { duration: 0.2 },
+							}}
+							whileTap={{ scale: 0.8 }}
 							key={index}
 						>
 							<span
