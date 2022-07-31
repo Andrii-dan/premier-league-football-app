@@ -10,6 +10,7 @@ import Header from './components/StructureComponents/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import Content from './components/StructureComponents/Content/Content';
 import Standing from './pages/Standing/Standing';
+import Footer from './components/StructureComponents/Footer/Footer';
 
 function App() {
 	const [clubsList, setClubsList] = useState([]);
@@ -47,6 +48,7 @@ function App() {
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
 			</Content>
+			<Footer />
 		</Router>
 	);
 }
