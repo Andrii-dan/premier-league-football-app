@@ -2,7 +2,7 @@
 
 .mobile-nav {
 	width: 100%;
-	height: calc(100vh - 60px);
+	height: 100vh;
 	display: none;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -10,7 +10,7 @@
 	opacity: 0.95;
 	font-size: 40px;
 	font-weight: bold;
-	position: absolute;
+	position: fixed;
 	top: 60px;
 	left: 0;
 	padding: 15px;

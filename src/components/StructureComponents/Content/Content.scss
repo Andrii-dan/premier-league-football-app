@@ -6,4 +6,13 @@
 	justify-content: flex-start;
 	background: $primary-bg-color;
 	min-height: calc(100vh - 120px);
+
+	.content-box {
+		padding: 0 10px 25px 10px;
+
+		@include mobile {
+			padding: 0;
+			padding-bottom: 15px;
+		}
+	}
 }

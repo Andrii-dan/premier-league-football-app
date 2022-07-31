@@ -1,6 +1,7 @@
 @import '../../../scss/base';
 
 .footer {
+	width: 100%;
 	box-shadow: $base-box-shadow;
 	background: #3d3d3d;
 	height: 60px;
@@ -10,5 +11,4 @@
 	font-size: 14px;
 	color: $text-color-white;
 	margin: 0 auto;
-	max-width: 1680px;
 }

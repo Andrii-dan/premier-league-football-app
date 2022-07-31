@@ -1,35 +1,43 @@
 @import '../../../scss/base';
 
-.nav-bar-section {
-	height: 60px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	color: $text-color-white;
-	background: $header-bg-color;
-	padding: 20px;
+.nav-bar {
+	width: 100%;
 	position: relative;
-	margin: 0 auto;
-	max-width: 1680px;
+	top: 0;
+	left: 0;
+	background: $header-bg-color;
+	height: 60px;
+	@include flex-center;
 
-	.logo {
-		font-weight: bold;
-		color: $text-color-white;
+	&-section {
+		width: 100%;
+		max-width: 1680px;
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		font-size: 24px;
-		cursor: pointer;
-	}
+		color: $text-color-white;
+		padding: 20px;
+		margin: 0 auto;
 
-	.fa-bars,
-	.fa-xmark {
-		display: none;
-		font-size: 32px;
-		cursor: pointer;
-		transition: 0.3s;
+		.logo {
+			font-weight: bold;
+			color: $text-color-white;
+			display: flex;
+			align-items: center;
+			font-size: 24px;
+			cursor: pointer;
+		}
 
-		@include mobile {
-			display: block;
+		.fa-bars,
+		.fa-xmark {
+			display: none;
+			font-size: 32px;
+			cursor: pointer;
+			transition: 0.3s;
+
+			@include mobile {
+				display: block;
+			}
 		}
 	}
 }
