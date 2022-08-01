@@ -6,7 +6,7 @@ const NavBar = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className='container'>
+		<div className='container_nav-bar'>
 			<ul>
 				<li>
 					<button
@@ -39,7 +39,14 @@ const NavBar = () => {
 					</button>
 				</li>
 				<li>
-					<button className='btn'>Add Standing</button>
+					<button
+						className='btn'
+						onClick={() => {
+							navigate('/add-fixtures');
+						}}
+					>
+						Add Fixtures
+					</button>
 				</li>
 			</ul>
 		</div>

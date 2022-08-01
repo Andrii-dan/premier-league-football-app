@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage/HomePage';
 import Content from './components/StructureComponents/Content/Content';
 import StandingPage from './pages/Standing/StandingPage';
 import Footer from './components/StructureComponents/Footer/Footer';
+import AddFixture from './pages/Edit/AddFixture';
 
 function App() {
 	const [clubsList, setClubsList] = useState([]);
@@ -31,8 +32,6 @@ function App() {
 		getData();
 	}, []);
 
-	console.log(clubsList);
-
 	return (
 		<Router>
 			<Header />
@@ -45,6 +44,10 @@ function App() {
 					/>
 					<Route path='/edit' element={<AdminPanel />} />
 					<Route path='/add-club' element={<AddClub />} />
+					<Route
+						path='/add-fixture'
+						element={<AddFixture clubsList={clubsList} />}
+					/>
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
 			</Content>

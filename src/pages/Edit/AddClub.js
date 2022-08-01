@@ -100,7 +100,7 @@ const AddClub = () => {
 	};
 
 	return (
-		<div className='main'>
+		<div className='col-12'>
 			<div className='form-container'>
 				{/* Add Club inputs */}
 				<div className='add-club'>
