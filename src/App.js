@@ -11,7 +11,7 @@ import HomePage from './pages/HomePage/HomePage';
 import Content from './components/StructureComponents/Content/Content';
 import StandingPage from './pages/Standing/StandingPage';
 import Footer from './components/StructureComponents/Footer/Footer';
-import AddFixture from './pages/Edit/AddFixture';
+import AddMatchday from './pages/Edit/AddMatchday';
 
 function App() {
 	const [clubsList, setClubsList] = useState([]);
@@ -45,8 +45,8 @@ function App() {
 					<Route path='/edit' element={<AdminPanel />} />
 					<Route path='/add-club' element={<AddClub />} />
 					<Route
-						path='/add-fixture'
-						element={<AddFixture clubsList={clubsList} />}
+						path='/add-matchday'
+						element={<AddMatchday clubsList={clubsList} />}
 					/>
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>

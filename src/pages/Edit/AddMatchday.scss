@@ -1,0 +1,64 @@
+@import '../../scss/base';
+
+.fixtures-list {
+	width: 100%;
+	@include flex-center;
+	flex-direction: column;
+
+	li {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid $light-border-color;
+		padding: 20px;
+		margin-bottom: 15px;
+		border-radius: $border-radius;
+
+		img {
+			width: 35px;
+			height: 35px;
+		}
+
+		span {
+			margin: 0 100px;
+		}
+	}
+}
+
+.add-matchday-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	fieldset {
+		@include flex-center;
+		margin: 15px;
+		label,
+		input {
+			padding: 5px 10px;
+		}
+	}
+
+	label,
+	input {
+		margin: 8px 0;
+	}
+
+
+	button {
+		padding: 10px 20px;
+		border: 1px solid $light-border-color;
+		border-radius: $border-radius;
+		background: $header-bg-color;
+		color: $text-color-white;
+		cursor: pointer;
+		&:hover {
+			color: $text-color-dark;
+			box-shadow: $base-box-shadow;
+			background: $secondary-bg-color;
+		}
+	}
+}

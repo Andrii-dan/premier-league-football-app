@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import './AddFixture.scss';
 
-const AddFixture = ({ clubsList }) => {
+const AddFixture = ({ clubsList, setFixtures }) => {
 	const uniqueId = uuid();
 	const [date, setDate] = useState('2022-08-01');
-	const [time, setTime] = useState('00:00');
+	const [time, setTime] = useState('08:00');
 
 	const [fixtureInfo, setFixtureInfo] = useState({
 		id: uniqueId,
 		date: '',
 		stadium: '',
 		matchStatus: null,
-		homeTeam: {},
-		awayTeam: {},
+		homeTeam: {
+			id: '',
+			name: '',
+			logo: '',
+			shortName: '',
+		},
+		awayTeam: { id: '', name: '', logo: '', shortName: '' },
 		result: { winner: null, homeGoals: null, awayGoals: null },
 	});
 
@@ -46,16 +51,39 @@ const AddFixture = ({ clubsList }) => {
 		});
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	useEffect(() => {
 		setFixtureInfo((prev) => {
 			return { ...prev, date: `${date} ${time} GMT+2` };
 		});
+	}, [time, date]);
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		setFixtures((prev) => {
+			return [...prev, fixtureInfo];
+		});
+
+		setFixtureInfo({
+			id: uniqueId,
+			date: '',
+			stadium: '',
+			matchStatus: null,
+			homeTeam: {
+				id: '',
+				name: '',
+				logo: '',
+				shortName: '',
+			},
+			awayTeam: { id: '', name: '', logo: '', shortName: '' },
+			result: { winner: null, homeGoals: null, awayGoals: null },
+		});
+		setTime('08:00');
+		setDate('2022-08-01');
 	};
 
 	return (
 		<div className='col-12 form-container'>
-			<form className='add-fixture-form' onSubmit={(e) => handleSubmit(e)}>
+			<div className='add-fixture-form'>
 				<div>
 					<label htmlFor='home-team'>Home</label>
 					<select
@@ -121,34 +149,10 @@ const AddFixture = ({ clubsList }) => {
 					</select>
 				</div>
 
-				<button type='submit'>Add Fixture</button>
-			</form>
+				<button onClick={(e) => handleClick(e)}>Add Fixture</button>
+			</div>
 		</div>
 	);
 };
 
 export default AddFixture;
-
-{
-	/* <fieldset
-    onChange={(e) =>
-        setMatchdayInfo((prev) => {
-            return { ...prev, current: e.target.value };
-        })
-    }
->
-    <legend>Is it a current matchday? </legend>
-
-    <input type='radio' id='yes' name='current-matchday' value={true} />
-    <label htmlFor='yes'>Yes</label>
-
-    <input
-        type='radio'
-        id='no'
-        name='current-matchday'
-        value={false}
-        defaultChecked
-    />
-    <label htmlFor='no'>No</label>
-</fieldset> */
-}
