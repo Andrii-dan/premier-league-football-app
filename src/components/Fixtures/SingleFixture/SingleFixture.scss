@@ -1,0 +1,51 @@
+@import '../../../scss/base';
+
+.fixture {
+	display: flex;
+	width: 90%;
+	align-items: center;
+	border: 1px solid $light-border-color;
+	border-top: none;
+	background: $secondary-bg-color;
+	cursor: pointer;
+	&:hover {
+		box-shadow: $base-box-shadow;
+		background: linear-gradient(
+			190deg,
+			rgba(151, 60, 255, 1) 40%,
+			rgba(255, 48, 250, 1)
+		);
+		color: $text-color-white;
+	}
+}
+
+.team,
+.club-logo,
+.score {
+	display: inline-block;
+}
+
+.club-logo,
+.score {
+	text-align: center;
+}
+
+.team {
+	width: 30%;
+}
+
+.club-logo {
+	width: 10%;
+}
+
+.score {
+	width: 20%;
+}
+
+.home {
+	text-align: right;
+}
+
+.away {
+	text-align: left;
+}

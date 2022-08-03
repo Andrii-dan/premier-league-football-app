@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase-config';
 import { collection, getDocs, query, where, limit } from 'firebase/firestore';
 import Loading from '../StructureComponents/Loading/Loading';
+import FixturesByDate from './FixturesByDate/FixturesByDate';
 import './Fixtures.scss';
 
 const Fixtures = () => {
 	const [matchdayInfo, setMatchdayInfo] = useState([]);
 	const [round, setRound] = useState('');
+	const [fixtureDates, setFixtureDates] = useState([]);
 	const options = [
 		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
 		22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
@@ -28,6 +30,9 @@ const Fixtures = () => {
 			data.forEach((doc) => {
 				setMatchdayInfo(doc.data());
 				setRound(Number(doc.data().round));
+				setFixtureDates([
+					...new Set(doc.data().matches.map((item) => item.date.slice(0, 10))),
+				]);
 			});
 		};
 
@@ -39,6 +44,9 @@ const Fixtures = () => {
 			const data = await getDocs(matchdayColRef);
 			data.forEach((doc) => {
 				setMatchdayInfo(doc.data());
+				setFixtureDates([
+					...new Set(doc.data().matches.map((item) => item.date.slice(0, 10))),
+				]);
 			});
 		};
 
@@ -56,11 +64,11 @@ const Fixtures = () => {
 	};
 
 	const onSelectChange = (e) => {
-		setRound(parseInt(e.target.value));
+		setRound(Number(e.target.value));
 	};
 
 	console.log(matchdayInfo);
-	console.log(round);
+	console.log(fixtureDates);
 
 	return (
 		<div className='col-6 fixtures'>
@@ -86,10 +94,11 @@ const Fixtures = () => {
 							</select>
 						</h2>
 					</fieldset>
-					{/* <FixturesDate
-						fixturesByDate={fixturesByDate}
-						fixtureDate={fixtureDate}
-					/> */}
+					<FixturesByDate
+						fixtureDates={fixtureDates}
+						matchdayInfo={matchdayInfo.matches}
+					/>
+
 					<div className='fixtures__buttons col-12'>
 						<button onClick={() => handleChangeRound(false)}>
 							<i className='fas fa-arrow-left'></i> Previous round
