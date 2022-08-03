@@ -28,7 +28,10 @@ $column-base-width: calc(100% / $columns);
 			.col-#{$i} {
 				min-height: 1px;
 				width: $column-base-width * $i;
-				padding: 8px;
+				padding: 10px 8px;
+				@include mobile {
+					padding: 10px 15px;
+				}
 			}
 		}
 	}

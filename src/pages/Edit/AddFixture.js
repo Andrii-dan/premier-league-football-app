@@ -57,6 +57,18 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 		});
 	}, [time, date]);
 
+	useEffect(() => {
+		clubsList.sort((a, b) => {
+			if (a.name < b.name) {
+				return -1;
+			}
+			if (a.name > b.name) {
+				return 1;
+			}
+			return 0;
+		});
+	}, []);
+
 	const handleClick = (e) => {
 		e.preventDefault();
 		setFixtures((prev) => {
@@ -65,7 +77,7 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 
 		setFixtureInfo({
 			id: uniqueId,
-			date: '',
+			date: `${date} ${time} GMT+2`,
 			stadium: '',
 			matchStatus: null,
 			homeTeam: {
@@ -77,8 +89,8 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 			awayTeam: { id: '', name: '', logo: '', shortName: '' },
 			result: { winner: null, homeGoals: null, awayGoals: null },
 		});
-		setTime('08:00');
-		setDate('2022-08-01');
+		setTime(time);
+		setDate(date);
 	};
 
 	return (

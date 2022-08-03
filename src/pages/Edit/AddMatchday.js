@@ -75,9 +75,10 @@ const AddMatchday = ({ clubsList }) => {
 				/>
 				<ul className='fixtures-list'>
 					{fixtures.length !== 0
-						? fixtures.map((el) => {
+						? fixtures.map((el, index) => {
 								return (
 									<li key={el.id}>
+										<span>{index+1}</span>
 										<img
 											src={el.homeTeam.logo}
 											alt={`${el.homeTeam.name}'s logo`}

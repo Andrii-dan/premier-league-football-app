@@ -3,7 +3,8 @@
 .fixtures-list {
 	width: 100%;
 	@include flex-center;
-	flex-direction: column;
+	flex-direction: column-reverse;
+
 
 	li {
 		width: 100%;
@@ -46,7 +47,6 @@
 	input {
 		margin: 8px 0;
 	}
-
 
 	button {
 		padding: 10px 20px;

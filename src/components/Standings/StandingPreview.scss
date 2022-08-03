@@ -7,7 +7,7 @@
 
 .standing__preview {
 	@include mobile {
-		padding: 0 8px;
+		order: 1;
 	}
 
 	&-heading {
