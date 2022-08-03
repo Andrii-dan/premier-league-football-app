@@ -42,10 +42,10 @@ const NavBar = () => {
 					<button
 						className='btn'
 						onClick={() => {
-							navigate('/add-fixtures');
+							navigate('/add-matchday');
 						}}
 					>
-						Add Fixtures
+						Add Matchday
 					</button>
 				</li>
 			</ul>

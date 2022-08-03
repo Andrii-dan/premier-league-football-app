@@ -31,9 +31,6 @@ const AddMatchday = ({ clubsList }) => {
 		setFixtures([]);
 	};
 
-	console.log(fixtures);
-	console.log(matchdayInfo);
-
 	return (
 		<div className='col-12 form-container'>
 			<form className='add-matchday-form' onSubmit={(e) => handleSubmit(e)}>

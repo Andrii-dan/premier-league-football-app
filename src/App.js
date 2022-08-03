@@ -19,7 +19,7 @@ function App() {
 
 	useEffect(() => {
 		// takes data from firebase with all clubs (objects) and its info like name, logo, games etc., and updates clubList state
-		const getData = async () => {
+		const getClubs = async () => {
 			const data = await getDocs(clubsCollectionRef);
 			setClubsList(
 				data.docs.map((doc) => ({
@@ -29,7 +29,7 @@ function App() {
 			);
 		};
 
-		getData();
+		getClubs();
 	}, []);
 
 	return (

@@ -35,9 +35,9 @@ const FullStanding = ({ clubsList }) => {
 								<li
 									key={index}
 									className={
-										index === 3
+										el.position === 4
 											? 'col-12 club ucl-zone'
-											: index === 16
+											: el.position === 17
 											? 'col-12 club relegation-zone'
 											: 'col-12 club'
 									}
