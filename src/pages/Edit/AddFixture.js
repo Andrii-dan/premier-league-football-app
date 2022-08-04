@@ -5,7 +5,7 @@ import './AddFixture.scss';
 const AddFixture = ({ clubsList, setFixtures }) => {
 	const uniqueId = uuid();
 	const [date, setDate] = useState('2022-08-01');
-	const [time, setTime] = useState('08:00');
+	const [time, setTime] = useState('12:00');
 
 	const [fixtureInfo, setFixtureInfo] = useState({
 		id: uniqueId,

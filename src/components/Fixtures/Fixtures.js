@@ -67,12 +67,9 @@ const Fixtures = () => {
 		setRound(Number(e.target.value));
 	};
 
-	console.log(matchdayInfo);
-	console.log(fixtureDates);
-
 	return (
 		<div className='col-6 fixtures'>
-			{!matchdayInfo ? (
+			{!matchdayInfo || fixtureDates.length === 0 ? (
 				<div className='loading-box'>
 					<Loading />
 				</div>
@@ -94,6 +91,7 @@ const Fixtures = () => {
 							</select>
 						</h2>
 					</fieldset>
+
 					<FixturesByDate
 						fixtureDates={fixtureDates}
 						matchdayInfo={matchdayInfo.matches}

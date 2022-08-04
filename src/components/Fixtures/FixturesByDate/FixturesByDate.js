@@ -36,21 +36,13 @@ const FixturesByDate = ({ fixtureDates, matchdayInfo }) => {
 		});
 		setFixtures(res);
 	}, [matchdayInfo]);
-	// const filterMatches = (date) => {
-	// 	matchdayInfo.filter((item) => {
-	// 		return item.date === date;
-	// 	});
-	// };
-
-	console.log(fixtures);
 
 	return (
 		<div className='fixture__date-container'>
 			{fixtures.map((el, index) => {
-				console.log(el);
 				return (
-					<>
-						<div key={index} className='col-12 fixture__date'>
+					<div key={index}>
+						<div className='col-12 fixture__date'>
 							<h3 className='fixture__date-info'>
 								{days[new Date(fixtureDates[index]).getDay()]}{' '}
 								{new Date(fixtureDates[index]).getDate()}{' '}
@@ -61,7 +53,7 @@ const FixturesByDate = ({ fixtureDates, matchdayInfo }) => {
 						{el.map((match) => {
 							return <SingleFixture key={match.id} matchData={match} />;
 						})}
-					</>
+					</div>
 				);
 			})}
 		</div>
