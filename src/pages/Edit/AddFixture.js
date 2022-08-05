@@ -4,6 +4,7 @@ import './AddFixture.scss';
 
 const AddFixture = ({ clubsList, setFixtures }) => {
 	const uniqueId = uuid();
+	const [clubs, setClubs] = useState([]);
 	const [date, setDate] = useState('2022-10-01');
 	const [time, setTime] = useState('12:00');
 
@@ -27,12 +28,12 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 			return {
 				...prev,
 				homeTeam: {
-					id: clubsList[e].id,
-					name: clubsList[e].name,
-					logo: clubsList[e].logo,
-					shortName: clubsList[e].shortName,
+					id: clubs[e].id,
+					name: clubs[e].name,
+					logo: clubs[e].logo,
+					shortName: clubs[e].shortName,
 				},
-				stadium: clubsList[e].stadium,
+				stadium: clubs[e].stadium,
 			};
 		});
 	};
@@ -42,10 +43,10 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 			return {
 				...prev,
 				awayTeam: {
-					id: clubsList[e].id,
-					name: clubsList[e].name,
-					logo: clubsList[e].logo,
-					shortName: clubsList[e].shortName,
+					id: clubs[e].id,
+					name: clubs[e].name,
+					logo: clubs[e].logo,
+					shortName: clubs[e].shortName,
 				},
 			};
 		});
@@ -58,21 +59,23 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 	}, [time, date]);
 
 	useEffect(() => {
-		clubsList.sort((a, b) => {
-			if (a.name < b.name) {
-				return -1;
-			}
-			if (a.name > b.name) {
-				return 1;
-			}
-			return 0;
-		});
+		const arr = clubsList;
+		setClubs(
+			arr.sort((a, b) => {
+				if (a.name < b.name) {
+					return -1;
+				}
+				if (a.name > b.name) {
+					return 1;
+				}
+				return 0;
+			})
+		);
 	}, []);
 
 	const handleClick = (e) => {
 		e.preventDefault();
 		setFixtures((prev) => {
-			console.log(prev);
 			return [...prev, fixtureInfo];
 		});
 
@@ -106,7 +109,7 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 						required
 					>
 						<option value=''>Choose a home team</option>
-						{clubsList.map((el, index) => {
+						{clubs.map((el, index) => {
 							return (
 								<option value={index} key={el.id}>
 									{el.name}
@@ -152,7 +155,7 @@ const AddFixture = ({ clubsList, setFixtures }) => {
 						required
 					>
 						<option value=''>Choose an away team</option>
-						{clubsList.map((el, index) => {
+						{clubs.map((el, index) => {
 							return (
 								<option value={index} key={el.id}>
 									{el.name}

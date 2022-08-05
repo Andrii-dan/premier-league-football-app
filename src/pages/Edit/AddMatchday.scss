@@ -58,10 +58,8 @@
 
 .add-matchday-form {
 	width: 100%;
-	display: flex;
+	@include flex-center;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 
 	fieldset {
 		@include flex-center;

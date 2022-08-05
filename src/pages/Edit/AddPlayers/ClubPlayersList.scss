@@ -1,0 +1,18 @@
+@import '../../../scss/base';
+
+.club-players {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 15px;
+
+	.players-list {
+		width: 20%;
+		padding: 15px;
+
+		li,
+		p {
+			padding: 7px 0;
+		}
+	}
+}

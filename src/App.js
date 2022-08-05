@@ -12,6 +12,7 @@ import Content from './components/StructureComponents/Content/Content';
 import StandingPage from './pages/Standing/StandingPage';
 import Footer from './components/StructureComponents/Footer/Footer';
 import AddMatchday from './pages/Edit/AddMatchday';
+import AddPlayers from './pages/Edit/AddPlayers/AddPlayers';
 
 function App() {
 	const [clubsList, setClubsList] = useState([]);
@@ -47,6 +48,10 @@ function App() {
 					<Route
 						path='/add-matchday'
 						element={<AddMatchday clubsList={clubsList} />}
+					/>
+					<Route
+						path='/add-players'
+						element={<AddPlayers clubsList={clubsList} />}
 					/>
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>

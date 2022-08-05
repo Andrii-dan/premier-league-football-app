@@ -1,0 +1,47 @@
+@import '../../../scss/base';
+
+.add-player-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.input-card {
+		width: 100%;
+		padding: 15px;
+
+		label {
+			display: inline-block;
+			width: 150px;
+			padding: 0 15px;
+		}
+
+		input,
+		select {
+			width: 300px;
+			height: 25px;
+			border: 1px solid $light-border-color;
+			border-radius: 25px;
+			padding: 0 10px;
+		}
+	}
+
+	.player-btn-card {
+		width: 100%;
+		padding: 15px;
+		@include flex-center;
+
+		button {
+			padding: 10px 20px;
+			border: 1px solid $light-border-color;
+			border-radius: $border-radius;
+			background: $header-bg-color;
+			color: $text-color-white;
+			cursor: pointer;
+			&:hover {
+				color: $text-color-dark;
+				box-shadow: $base-box-shadow;
+				background: $secondary-bg-color;
+			}
+		}
+	}
+}
