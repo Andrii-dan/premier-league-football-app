@@ -16,6 +16,14 @@
 			rgba(255, 48, 250, 1)
 		);
 		color: $text-color-white;
+
+		.inprogress-circle {
+			background: $secondary-bg-color;
+		}
+
+		.half-time {
+			color: $text-color-white;
+		}
 	}
 }
 
@@ -36,10 +44,27 @@
 
 .club-logo {
 	width: 10%;
+
+	img {
+		width: 25px;
+		height: 25px;
+	}
 }
 
 .score {
+	position: relative;
 	width: 20%;
+
+	.half-time {
+		width: 50px;
+		height: 3px;
+		font-size: 8.5px;
+		color: $releg-color;
+		position: absolute;
+		top: -10px;
+		right: 50%;
+		transform: translate(50%, -50%);
+	}
 }
 
 .home {

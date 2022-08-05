@@ -1,0 +1,21 @@
+@import '../../../scss/base';
+
+.inprogress-wrapper {
+	width: 30px;
+	height: 3px;
+    border-radius: $border-radius;
+	position: absolute;
+	top: -4px;
+	right: 50%;
+	transform: translate(50%, -50%);
+    background: #973cff20;
+
+
+	.inprogress-circle {
+		display: block;
+		width: 7px;
+		height: 3px;
+		border-radius: $border-radius;
+		background: $btn-color;
+	}
+}
