@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import AddPlayer from './AddPlayer';
-import './AddPlayers.scss';
 import ClubPlayersList from './ClubPlayersList';
+import { db } from '../../../firebase-config';
+import { doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import './AddPlayers.scss';
 
 const AddPlayers = ({ clubsList }) => {
 	const [clubs, setClubs] = useState([]);
@@ -26,6 +28,23 @@ const AddPlayers = ({ clubsList }) => {
 			})
 		);
 	}, [clubsList]);
+
+	const handleAddPlayers = async () => {
+		const clubRef = doc(db, 'clubs22_23', selectedClub.id);
+		await updateDoc(clubRef, {
+			'players.goalkeeper': arrayUnion(...goalkeeper),
+			'players.defence': arrayUnion(...defence),
+			'players.midfield': arrayUnion(...midfield),
+			'players.attack': arrayUnion(...attack),
+			'players.other': arrayUnion(...other),
+		});
+		alert('players had been added');
+		setGoalkeeper([]);
+		setDefence([]);
+		setMidfield([]);
+		setAttack([]);
+		setOther([]);
+	};
 
 	return (
 		<div className='col-12 form-container'>
@@ -64,6 +83,11 @@ const AddPlayers = ({ clubsList }) => {
 							setOther,
 						]}
 					/>
+					<div className='players-btn-card'>
+						<button onClick={handleAddPlayers}>
+							Add all {selectedClub.name} Players
+						</button>
+					</div>
 				</>
 			)}
 		</div>

@@ -25,3 +25,24 @@
 		}
 	}
 }
+
+.players-btn-card {
+	width: 100%;
+	padding: 15px;
+	border-top: 1px solid $light-border-color;
+	@include flex-center;
+
+	button {
+		padding: 10px 20px;
+		border: 1px solid $light-border-color;
+		border-radius: $border-radius;
+		background: $header-bg-color;
+		color: $text-color-white;
+		cursor: pointer;
+		&:hover {
+			color: $text-color-dark;
+			box-shadow: $base-box-shadow;
+			background: $secondary-bg-color;
+		}
+	}
+}
