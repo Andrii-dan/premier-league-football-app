@@ -9,7 +9,8 @@ const MatchInProgressAnimation = () => {
 				animate={{
 					x: 22,
 					transition: {
-						yoyo: Infinity,
+						repeat: Infinity,
+						repeatType: 'reverse',
 						duration: 0.8,
 					},
 				}}
