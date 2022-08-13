@@ -28,7 +28,7 @@ const ClubsStrap = ({ clubsList }) => {
 							whileTap={{ scale: 1 }}
 							key={index}
 							onClick={() => {
-								navigate(`/clubs/${el.id}`);
+								navigate(`/club/${el.id}`);
 							}}
 						>
 							<img className='club__logo' src={el.logo} alt={`${el.name}'s`} />

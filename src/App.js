@@ -13,6 +13,7 @@ import StandingPage from './pages/Standing/StandingPage';
 import Footer from './components/StructureComponents/Footer/Footer';
 import AddMatchday from './pages/Edit/AddMatchday';
 import AddPlayers from './pages/Edit/AddPlayers/AddPlayers';
+import ClubPage from './pages/ClubPage/ClubPage';
 
 function App() {
 	const [clubsList, setClubsList] = useState([]);
@@ -52,6 +53,10 @@ function App() {
 					<Route
 						path='/add-players'
 						element={<AddPlayers clubsList={clubsList} />}
+					/>
+					<Route
+						path='/club/:clubId'
+						element={<ClubPage clubsList={clubsList} />}
 					/>
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
