@@ -10,11 +10,7 @@
 	cursor: pointer;
 	&:hover {
 		box-shadow: $base-box-shadow;
-		background: linear-gradient(
-			190deg,
-			rgba(151, 60, 255, 1) 40%,
-			rgba(255, 48, 250, 1)
-		);
+		background: $hover-liner-gradient;
 		color: $text-color-white;
 
 		.inprogress-circle {

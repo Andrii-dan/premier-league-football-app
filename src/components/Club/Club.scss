@@ -1,12 +1,15 @@
 @import '../../scss/base';
 
+.loading-box {
+	@include flex-center;
+	min-width: 100%;
+}
+
 .club__page {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	// margin: 0 16px;
-	// margin-top: 30px;
-	padding: 15px;
+	margin: 0 8px;
 	background: $secondary-bg-color;
 	border-radius: $border-radius;
 

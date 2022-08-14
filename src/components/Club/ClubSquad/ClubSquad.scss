@@ -1,0 +1,38 @@
+@import '../../../scss/base';
+
+.club__squad {
+	width: 100%;
+	padding: 10px 0;
+	@include mobile {
+		order: 4;
+	}
+
+	&-title {
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		font-size: 16px;
+		background: $header-bg-color;
+		color: $text-color-white;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom: 1px solid $light-border-color;
+	}
+
+	&-btns {
+		@include flex-center;
+		border: 1px solid $light-border-color;
+		border-top: none;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		background: $secondary-bg-color;
+
+		button {
+			width: 100%;
+			border: none;
+			background: none;
+			cursor: pointer;
+			padding: 15px 0;
+		}
+	}
+}

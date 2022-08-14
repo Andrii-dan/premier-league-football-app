@@ -19,6 +19,13 @@ $header-bg-color: linear-gradient(
 	rgba(172, 121, 222, 1) 0%
 );
 
+//background linear-gradient for hover
+$hover-liner-gradient: linear-gradient(
+	190deg,
+	rgba(151, 60, 255, 1) 40%,
+	rgba(255, 48, 250, 1)
+);
+
 // buttons hover color
 $btn-color: #973cff;
 

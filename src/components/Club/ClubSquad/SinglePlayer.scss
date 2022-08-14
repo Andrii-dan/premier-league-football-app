@@ -1,0 +1,52 @@
+@import '../../../scss/base';
+
+.single__player {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid $light-border-color;
+	border-top: none;
+	background: $secondary-bg-color;
+	cursor: pointer;
+
+	&:last-child {
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+	}
+
+	&:hover {
+		box-shadow: $base-box-shadow;
+		background: $hover-liner-gradient;
+		color: $text-color-white;
+	}
+
+	&-photo {
+		width: 15%;
+
+		img {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+		}
+
+		.fa-circle-user {
+			color: $light-border-color;
+			font-size: 30px;
+		}
+	}
+
+	&-info {
+		width: 75%;
+
+		span {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	&-number {
+		width: 10%;
+		text-align: center;
+	}
+}

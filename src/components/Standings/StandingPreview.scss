@@ -30,7 +30,7 @@
 		cursor: pointer;
 		&:hover {
 			box-shadow: $base-box-shadow;
-			background: $header-bg-color;
+			background: $hover-liner-gradient;
 			color: $text-color-white;
 		}
 		&:last-child {
