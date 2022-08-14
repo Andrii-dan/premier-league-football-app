@@ -1,0 +1,37 @@
+@import '../../../scss/base';
+
+.stat__container {
+	@include flex-center;
+	flex-direction: column;
+	border-bottom: 1px solid $light-border-color;
+	background: $secondary-bg-color;
+
+	@include mobile {
+		flex-wrap: wrap;
+	}
+
+	&:last-child {
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+	}
+
+	&-title {
+		text-align: center;
+		font-weight: bold;
+	}
+
+	.stat__info-box {
+		display: flex;
+	}
+
+	.stat__info {
+		@include flex-center;
+		flex-direction: column;
+		width: 100%;
+		padding: 10px;
+
+		&-title {
+			padding: 10px;
+		}
+	}
+}

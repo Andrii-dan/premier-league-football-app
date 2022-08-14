@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../StructureComponents/Loading/Loading';
-import './Club.scss';
 import ClubSquad from './ClubSquad/ClubSquad';
+import ClubStat from './ClubStat/ClubStat';
+import './Club.scss';
 
 const Club = ({ clubId, clubsList }) => {
 	const [clubInfo, setClubInfo] = useState(false);
@@ -41,7 +42,7 @@ const Club = ({ clubId, clubsList }) => {
 			<div className='col-6'>
 				{/* <NextFixture clubId={clubId} /> */}
 				{/* <LastFixtures clubId={clubId} /> */}
-				{/* <ClubStat clubInfo={clubInfo} /> */}
+				<ClubStat clubInfo={clubInfo} />
 			</div>
 			<div className='col-3'>
 				{/* <WinPercentege clubMatches={clubInfo.fixtures} /> */}

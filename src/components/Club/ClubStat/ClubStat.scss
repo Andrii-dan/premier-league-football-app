@@ -1,0 +1,18 @@
+@import '../../../scss/base';
+
+.club__stat {
+	width: 100%;
+	padding: 10px 0;
+
+	&-title {
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		font-size: 16px;
+		background: $header-bg-color;
+		color: $text-color-white;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom: 1px solid $light-border-color;
+	}
+}

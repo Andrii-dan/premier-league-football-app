@@ -4,7 +4,6 @@ import './ClubSquad.scss';
 
 const ClubSquad = ({ players, position }) => {
 	const [toggle, setToggle] = useState(false);
-	console.log(toggle);
 
 	return players.length === 0 ? null : (
 		<div className='club__squad'>
