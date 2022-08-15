@@ -1,0 +1,78 @@
+@import '../../../scss/base';
+
+.win__percentage {
+	padding: 10px 0;
+
+	&-title {
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		font-size: 16px;
+		background: $header-bg-color;
+		color: $text-color-white;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom: 1px solid $light-border-color;
+	}
+
+	&-box {
+		@include flex-center;
+		flex-wrap: wrap;
+		background: $secondary-bg-color;
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		font-size: 25px;
+		font-weight: 800;
+	}
+}
+
+.percentage__box {
+	@include flex-center;
+	flex-direction: column;
+
+	&-title {
+		font-size: 20px;
+		padding: 20px 30px 10px 30px;
+	}
+}
+
+.high,
+.normal,
+.low,
+.very-low {
+	padding: 5px 30px 20px 30px;
+}
+
+.high {
+	color: #31c700;
+}
+.normal {
+	color: #7ac70e;
+}
+.low {
+	color: #de901d;
+}
+.very-low {
+	color: #de3107;
+}
+
+.circular-chart {
+	display: block;
+	margin: 10px auto;
+	max-width: 80%;
+	max-height: 250px;
+}
+
+.circle {
+	stroke: #4cc790;
+	fill: none;
+	stroke-width: 2.8;
+	stroke-linecap: round;
+	animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+	0% {
+		stroke-dasharray: 0 100;
+	}
+}

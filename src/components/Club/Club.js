@@ -3,6 +3,7 @@ import Loading from '../StructureComponents/Loading/Loading';
 import ClubSquad from './ClubSquad/ClubSquad';
 import ClubStat from './ClubStat/ClubStat';
 import './Club.scss';
+import WinPercentage from './WinPercentage/WinPercentage';
 
 const Club = ({ clubId, clubsList }) => {
 	const [clubInfo, setClubInfo] = useState(false);
@@ -45,7 +46,7 @@ const Club = ({ clubId, clubsList }) => {
 				<ClubStat clubInfo={clubInfo} />
 			</div>
 			<div className='col-3'>
-				{/* <WinPercentege clubMatches={clubInfo.fixtures} /> */}
+				<WinPercentage gamesStat={clubInfo.games} />
 				{/* <ClubStanding clubId={clubId} /> */}
 			</div>
 		</>
