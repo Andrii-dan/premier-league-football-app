@@ -42,7 +42,7 @@ const StandingPreview = ({ clubsList }) => {
 											: 'col-12 club'
 									}
 									onClick={() => {
-										navigate(`/clubs/${el.id}`);
+										navigate(`/club/${el.id}`);
 									}}
 								>
 									<span className='club__position'>{el.position}</span>

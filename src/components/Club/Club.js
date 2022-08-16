@@ -4,6 +4,7 @@ import ClubSquad from './ClubSquad/ClubSquad';
 import ClubStat from './ClubStat/ClubStat';
 import './Club.scss';
 import WinPercentage from './WinPercentage/WinPercentage';
+import ClubStanding from './ClubStanding/ClubStanding';
 
 const Club = ({ clubId, clubsList }) => {
 	const [clubInfo, setClubInfo] = useState(false);
@@ -47,7 +48,7 @@ const Club = ({ clubId, clubsList }) => {
 			</div>
 			<div className='col-3'>
 				<WinPercentage gamesStat={clubInfo.games} />
-				{/* <ClubStanding clubId={clubId} /> */}
+				<ClubStanding clubsList={clubsList} clubId={clubInfo.id} />
 			</div>
 		</>
 	);

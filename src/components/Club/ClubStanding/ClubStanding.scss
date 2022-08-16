@@ -1,0 +1,79 @@
+@import '../../../scss/variables';
+
+.loading-box {
+	@include flex-center;
+	// min-height: 500px;
+}
+
+.club__standing {
+	width: 100%;
+	padding: 10px 0;
+
+	&-heading {
+		width: 100%;
+		height: 45px;
+		padding: 15px 0;
+		background: $header-bg-color;
+		color: $text-color-white;
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+		border-bottom: 1px solid $light-border-color;
+	}
+
+	.club {
+		border: 1px solid $light-border-color;
+		border-top: none;
+		display: flex;
+		align-items: center;
+		background: $secondary-bg-color;
+		cursor: pointer;
+		&:hover {
+			box-shadow: $base-box-shadow;
+			background: $hover-liner-gradient;
+			color: $text-color-white;
+		}
+		&:last-child {
+			border-bottom-left-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
+		}
+	}
+
+	.club__position,
+	.club__logo,
+	.club__name,
+	.club__games,
+	.club__goals-difference,
+	.club__points {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.club__name {
+		width: 45%;
+		text-align: left;
+	}
+
+	.club__logo {
+		width: 15%;
+	}
+
+	.club__position,
+	.club__games,
+	.club__goals-difference,
+	.club__points {
+		width: 10%;
+	}
+
+	.ucl-zone {
+		border-bottom: 2px solid $ucl-color;
+	}
+
+	.relegation-zone {
+		border-bottom: 2px solid $releg-color;
+	}
+
+	.mark {
+		background: $hover-liner-gradient;
+		color: $text-color-white;
+	}
+}
