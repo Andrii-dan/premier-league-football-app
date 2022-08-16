@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 5px 8px;
+	padding: 10px 8px;
 	border: 1px solid $light-border-color;
 	border-top: none;
 	background: $secondary-bg-color;
@@ -27,13 +27,15 @@
 	}
 
 	&-photo {
+		@include flex-center;
+		position: relative;
+		margin-right: 5px;
 		width: 15%;
 
 		img {
-			width: 40px;
-			height: 40px;
+			width: 42px;
+			height: 42px;
 			border-radius: 50%;
-			padding: 2px;
 		}
 
 		.fa-circle-user {
@@ -41,15 +43,39 @@
 			font-size: 36px;
 			padding: 2px;
 		}
+
+		.flag {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			position: absolute;
+			top: 95%;
+			right: 50%;
+			transform: translate(50%, -50%);
+			border: 1px solid $light-border-color;
+		}
+
+		.england {
+			background: url(https://firebasestorage.googleapis.com/v0/b/pm-league-app.appspot.com/o/flags%2Feng.png?alt=media&token=4f5df577-6f0d-4fea-b82c-23e07ec3e48c)
+				no-repeat center/cover;
+		}
 	}
 
 	&-info {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 		width: 75%;
 
-		span {
+		.player-name {
 			font-weight: 600;
 			font-size: 16px;
 			line-height: 24px;
+		}
+
+		.player-nationality {
+			font-weight: 400;
+			font-size: 14px;
 		}
 	}
 

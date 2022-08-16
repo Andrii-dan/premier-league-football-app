@@ -10,9 +10,11 @@ const SinglePlayer = ({ player }) => {
 				) : (
 					<img src={player.photo} alt={`${player.surname}'s`} />
 				)}
+				<span className={`flag ${player.nationality.toLowerCase()}`} />
 			</div>
 			<div className='single__player-info'>
-				<span>{`${player.name} ${player.surname}`}</span>
+				<span className='player-name'>{`${player.name} ${player.surname}`}</span>
+				<span className='player-nationality'>{player.nationality}</span>
 			</div>
 			<span className='single__player-number'>{player.number}</span>
 		</li>
