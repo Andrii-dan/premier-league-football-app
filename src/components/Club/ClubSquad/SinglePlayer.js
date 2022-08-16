@@ -3,9 +3,10 @@ import './SinglePlayer.scss';
 
 const SinglePlayer = ({ player }) => {
 	return (
-		<li className='col-12 single__player'>
+		<li className='single__player'>
 			<div className='single__player-photo'>
-				{player.photo === undefined || null ? (
+				{console.log(typeof player.photo)}
+				{player.photo === '' ? (
 					<i className='fa-solid fa-circle-user'></i>
 				) : (
 					<img src={player.photo} alt={`${player.surname}'s`} />

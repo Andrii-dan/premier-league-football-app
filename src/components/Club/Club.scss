@@ -10,6 +10,11 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0 8px;
+
+	@include mobile {
+		margin: 0 15px;
+	}
+	
 	background: $secondary-bg-color;
 	border-radius: $border-radius;
 

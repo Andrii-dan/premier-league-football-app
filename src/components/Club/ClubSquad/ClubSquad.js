@@ -16,7 +16,7 @@ const ClubSquad = ({ players, position }) => {
 					: players.map((el, index) => {
 							return <SinglePlayer key={index} player={el} />;
 					  })}
-				{players.length >= 3 ? (
+				{players.length > 3 ? (
 					<li className='club__squad-btns'>
 						{!toggle ? (
 							<button onClick={() => setToggle(true)}>
