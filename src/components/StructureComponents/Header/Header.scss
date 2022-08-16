@@ -34,6 +34,11 @@
 			&:hover img {
 				transform: scale(1.2);
 			}
+			@include mobile {
+				&:hover img {
+					transform: scale(1);
+				}
+			}
 		}
 
 		.fa-bars,

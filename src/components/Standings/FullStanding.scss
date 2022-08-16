@@ -27,13 +27,18 @@
 		align-items: center;
 		background: $secondary-bg-color;
 		cursor: pointer;
-		
+
 		&:hover {
 			box-shadow: $base-box-shadow;
 			background: $hover-liner-gradient;
 			color: $text-color-white;
+			@include mobile {
+				box-shadow: none;
+				background: $secondary-bg-color;
+				color: $text-color-dark;
+			}
 		}
-		
+
 		&:last-child {
 			border-bottom-left-radius: $border-radius;
 			border-bottom-right-radius: $border-radius;

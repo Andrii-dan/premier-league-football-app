@@ -5,7 +5,6 @@ const SinglePlayer = ({ player }) => {
 	return (
 		<li className='single__player'>
 			<div className='single__player-photo'>
-				{console.log(typeof player.photo)}
 				{player.photo === '' ? (
 					<i className='fa-solid fa-circle-user'></i>
 				) : (

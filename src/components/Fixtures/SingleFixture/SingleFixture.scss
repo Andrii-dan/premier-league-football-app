@@ -20,6 +20,19 @@
 		.half-time {
 			color: $text-color-white;
 		}
+
+		@include mobile {
+			box-shadow: none;
+			background: inherit;
+			color: inherit;
+			.inprogress-circle {
+				background: $btn-color;
+			}
+
+			.half-time {
+				color: $releg-color;
+			}
+		}
 	}
 }
 

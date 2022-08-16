@@ -1,4 +1,4 @@
-@import '../../../scss/variables';
+@import '../../../scss/base';
 
 .loading-box {
 	@include flex-center;
@@ -27,11 +27,7 @@
 		align-items: center;
 		background: $secondary-bg-color;
 		cursor: pointer;
-		&:hover {
-			box-shadow: $base-box-shadow;
-			background: $hover-liner-gradient;
-			color: $text-color-white;
-		}
+
 		&:last-child {
 			border-bottom-left-radius: $border-radius;
 			border-bottom-right-radius: $border-radius;
