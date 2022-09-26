@@ -1,4 +1,5 @@
 import React from 'react';
+import './CountryFlags.scss';
 import './SinglePlayer.scss';
 
 const SinglePlayer = ({ player }) => {
